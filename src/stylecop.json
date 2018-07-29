@@ -1,0 +1,56 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+    "indentation": {
+      "indentationSize": 4,
+      "useTabs": true,
+      "tabSize": 4
+    },
+    "orderingRules": {
+      "elementOrder": [],
+      "usingDirectivesPlacement": "outsideNamespace",
+      "blankLinesBetweenUsingGroups": "require",
+      "systemUsingDirectivesFirst": true
+    },
+    "maintainabilityRules": {
+      "topLevelTypes": [
+        "class",
+        "delegate",
+        "interface",
+        "enum",
+        "struct"
+      ]
+    },
+    "namingRules": {
+      "allowCommonHungarianPrefixes": true,
+      "allowedHungarianPrefixes": []
+    },
+    "layoutRules": {
+      "newlineAtEndOfFile": "require",
+      "allowConsecutiveUsings": true
+    },
+    "documentationRules": {
+      "companyName": "Yusuke Fujiwara",
+      "copyrightText": "Copyright (c) {companyName}. All rights reserved.\nLicensed under the {licenseName}. See {licenseFile} in the project root for license information.",
+      "variables": {
+        "licenseName": "Apache License, Version 2.0",
+        "licenseFile": "LICENSE"
+      },
+      "xmlHeader": false,
+      "documentationCulture": "en-US",
+      "documentExposedElements": true,
+      "documentInterfaces": false,
+      "documentInternalElements": false,
+      "documentPrivateElements": false,
+      "documentPrivateFields": false,
+      "excludeFromPunctuationCheck": [
+        "seealso"
+      ],
+      "fileNamingConvention": "metadata"
+    },
+    "readabilityRules": {
+      "allowBuiltInTypeAliases": false
+    },
+    "spacingRules": {}
+  }
+}

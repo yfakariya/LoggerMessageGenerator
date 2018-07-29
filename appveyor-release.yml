@@ -1,0 +1,46 @@
+version: '{branch}-{build}'
+image: Visual Studio 2017
+branches:
+  only:
+  - master
+configuration: Release
+build_script:
+- ps: >-
+    Write-Host "Configuration=${env:CONFIGURATION}"
+
+    cd ./script/build
+
+    ./Build.ps1
+
+    if ( $LastExitCode -ne 0 )
+    {
+        Write-Error "Failed to build."
+        exit 1
+    }
+
+    appveyor PushArtifact "../dist/LogggerMessageGenerator.${env:PackageVersion}.nupkg"
+
+    if ( $LastExitCode -ne 0 )
+    {
+        Write-Error "Failed to publish nupkg."
+        exit 1
+    }
+
+    appveyor PushArtifact "../dist/LogggerMessageGenerator.${env:PackageVersion}.symbols.nupkg"
+
+    if ( $LastExitCode -ne 0 )
+    {
+        Write-Error "Failed to publish symbol nupkg."
+        exit 1
+    }
+
+    cd ..
+deploy:
+- provider: Environment
+  name: LogggerMessageGenerator-nuget
+  on:
+    APPVEYOR_REPO_TAG: true
+- provider: Environment
+  name: LogggerMessageGenerator-github
+  on:
+    APPVEYOR_REPO_TAG: true

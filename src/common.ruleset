@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="All Rules" ToolsVersion="15.0">
+  <IncludeAll Action="Warning" />
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <!-- Too verbose ones -->
+    <Rule Id="SA1009" Action="None" /><!-- ClosingParenthesisMustBeSpacedCorrectly -->
+
+    <Rule Id="SA1111" Action="None" /><!-- ClosingParenthesisMustBeOnLineOfLastParameter -->
+    <Rule Id="SA1121" Action="None" /><!-- UseBuiltInTypeAlias -->
+
+    <Rule Id="SA1203" Action="None" /><!-- ConstantsMustAppearBeforeFields -->
+    <Rule Id="SA1205" Action="None" /><!-- PartialElementsMustDeclareAccess -->
+
+    <Rule Id="SA1309" Action="None" /><!-- FieldNamesMustNotBeginWithUnderscore -->
+
+    <Rule Id="SA1413" Action="None" /><!-- UseTrailingCommasInMultiLineInitializers -->
+
+    <Rule Id="SA1502" Action="None" /><!-- ElementMustNotBeOnSingleLine -->
+    <Rule Id="SA1512" Action="None" /><!-- SingleLineCommentsMustNotBeFollowedByBlankLine -->
+    <Rule Id="SA1513" Action="None" /><!-- ClosingBraceMustBeFollowedByBlankLine -->
+    <Rule Id="SA1515" Action="None" /><!-- SingleLineCommentMustBePrecededByBlankLine -->
+
+    <!-- Case by case ones -->
+    <Rule Id="SA1201" Action="None" /><!-- ElementsMustAppearInTheCorrectOrder -->
+    <Rule Id="SA1202" Action="None" /><!-- ElementsMustBeOrderedByAccess -->
+    <Rule Id="SA1204" Action="None" /><!-- StaticElementsMustAppearBeforeInstanceElements -->
+    <Rule Id="SA1214" Action="None" /><!-- ReadonlyElementsMustAppearBeforeNonReadonlyElements -->
+    <Rule Id="SA1215" Action="None" /><!-- InstanceReadonlyElementsMustAppearBeforeInstanceNonReadonlyElements -->
+  </Rules>
+</RuleSet>

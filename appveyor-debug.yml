@@ -1,0 +1,24 @@
+version: '{branch}-{build}'
+image: Visual Studio 2017
+skip_tags: true
+configuration: Debug
+build_script:
+- ps: >-
+    Write-Host "Configuration=${env:CONFIGURATION}"
+
+    cd ./script/build
+
+    ./Build.ps1
+
+    if ( $LastExitCode -ne 0 )
+    {
+        Write-Error "Failed to build."
+        exit 1
+    }
+
+    cd ..
+test_script:
+- cmd: >-
+    cd ./script/build
+
+    ./RunUnitTests.cmd
